@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get my no, If u can</title>
+</head>
+<body>
+    <div id="question"></div>
+    <input type="text" id="answer" placeholder="Your answer">
+    <button onclick="checkAnswer()">Submit</button>
+
+    <script>
+        var questions = [
+            { 
+                question: " What is my Fullname?", 
+                answer: "Jihal Shimray"
+            },
+            { 
+                question: " 2+2?", 
+                answer: "4"
+            }
+            // Add more questions as needed
+        ];
+
+        var currentQuestion = 0;
+
+        function showQuestion() {
+            document.getElementById("question").innerHTML = questions[currentQuestion].question;
+        }
+
+        function checkAnswer() {
+            var userAnswer = document.getElementById("answer").value.toLowerCase();
+            var correctAnswer = questions[currentQuestion].answer.toLowerCase();
+            if (userAnswer === correctAnswer) {
+                alert("Correct answer!");
+                // Show phone number
+                alert("Your phone number: +91 8787665349");
+            } else {
+                alert("Wrong answer. Try again.");
+            }
+        }
+
+        showQuestion();
+    </script>
+</body>
+</html>
